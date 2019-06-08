@@ -8,7 +8,7 @@ Created on Sat Jun  8 13:19:20 2019
 
 #Importing a text file initially to have a first look
 
-initial_data = open('SMSSpamCollection.tsv').read()
+initial_data = open('../data/SMSSpamCollection.tsv').read()
 initial_data[0:500]
 
 # Things to look for, \t and \n\
@@ -45,5 +45,5 @@ completedata = pd.DataFrame({
 
 # Now there is an easier way to do this. Since we have \t in the file, it means that it is tab delimited
 
-completedata_pd = pd.read_csv('SMSSpamCollection.tsv', sep = "\t", header = None)
+completedata_pd = pd.read_csv('../data/SMSSpamCollection.tsv', sep = "\t", header = None)
 
