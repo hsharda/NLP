@@ -47,3 +47,8 @@ completedata = pd.DataFrame({
 
 completedata_pd = pd.read_csv('../data/SMSSpamCollection.tsv', sep = "\t", header = None)
 
+
+# DATA EXPLORATION
+
+print(f'''The data has {len(completedata_pd)} rows and {len(completedata_pd.columns)} columns''')
+
