@@ -46,9 +46,15 @@ completedata = pd.DataFrame({
 # Now there is an easier way to do this. Since we have \t in the file, it means that it is tab delimited
 
 completedata_pd = pd.read_csv('../data/SMSSpamCollection.tsv', sep = "\t", header = None)
+completedata_pd.columns = ['label','text']
+
 
 
 # DATA EXPLORATION
 
 print(f'''The data has {len(completedata_pd)} rows and {len(completedata_pd.columns)} columns''')
+
+## Checking how many ham/spam are there
+
+ham_spam = completedata_pd.groupby(completedata_pd.label).count()
 
