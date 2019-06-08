@@ -101,3 +101,17 @@ pep8_test = 'I try to follow PEP8 guidelines'
 pep7_test = 'I try to follow PEP7 guidelines'
 peep8_test = 'I try to follow PEEP8 guidelines'
 
+## Trying to find PEP8 and its variants
+
+re.findall("[a-z]+",pep8_test)
+re.findall("[A-Z]+",pep8_test)
+re.findall("[A-Z0-9]+",pep8_test) # This will search for A to Z OR 0 to 9 so will also show I
+re.findall("[A-Z]+[0-9]+",pep8_test) # This will search for A to Z AND 0 to 9 so will not show I
+re.findall("[A-Z]+[0-9]+",pep7_test)
+re.findall("[A-Z]+[0-9]+",peep8_test)
+
+## Substituting the PEP8 and its variants with the corrected string
+
+re.sub("[A-Z]+[0-9]+","PEP8 Python Styleguide",pep8_test) # Use the same regex again that was defined and approved above
+re.sub("[A-Z]+[0-9]+","PEP8 Python Styleguide",pep7_test)
+re.sub("[A-Z]+[0-9]+","PEP8 Python Styleguide",peep8_test)
