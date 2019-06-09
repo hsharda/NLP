@@ -38,6 +38,7 @@ print(labellist[-5:])
 # Now creating a dataframe
 
 import pandas as pd
+pd.set_option('display.max_colwidth',100)
 
 completedata = pd.DataFrame({
         'label': labellist[:-1],
