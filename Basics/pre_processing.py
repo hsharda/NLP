@@ -13,3 +13,14 @@ import pandas as pd
 completedata_pd = pd.read_csv('../data/SMSSpamCollection.tsv', sep = "\t", header = None)
 completedata_pd.columns = ['label','text']
 
+import string # To remove punctuations
+import re # For tokenization
+
+# Building a function to remove punctuations
+
+def remove(x):
+    for c in string.punctuation:
+        x=x.replace(c,"")
+    return x
+
+completedata_pd['clean_text']= completedata_pd['text'].apply(remove)
