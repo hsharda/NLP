@@ -24,3 +24,10 @@ def remove(x):
     return x
 
 completedata_pd['clean_text']= completedata_pd['text'].apply(remove)
+
+# Building a function to tokenize
+
+def tokenize(x):
+    return re.split('\W+',x)
+
+completedata_pd['clean_text_tokens']= completedata_pd['clean_text'].apply(lambda x: tokenize(x.lower()))
